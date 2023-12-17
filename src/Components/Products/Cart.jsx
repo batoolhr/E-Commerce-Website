@@ -10,9 +10,15 @@ const Cart= () => {
     console.log('cartlist:', cartlist);
     
   return (
-    <>
-    <Header/>
-  <div className=' bg-[#E5E4E2] flex flex-col  min-h-screen-85'>
+  <>
+    <div className='w-[1200px] mx-auto'>
+      <Header />
+      </div>
+    <div className='bg-[#E5E4E2]'>
+      
+ <div className='w-[1200px] mx-auto'>
+ 
+  <div className='  flex flex-col  min-h-screen-85'>
     <div className='container mx-auto my-5 '>
     <div>
       <div className=' w-[1000px] mx-auto'>
@@ -35,7 +41,9 @@ const Cart= () => {
     </div>
   </div>
     </div>
+ </div>
   <Footer/>
+  </div>
   </>
   )
 }

@@ -17,7 +17,7 @@ const ProductCard = (props) => {
   return (
   
 
-     <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+     <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72">
   <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96 hover:scale-[0.97] cursor-pointer"
   onClick={()=>navToDEtails()}
   >

@@ -26,11 +26,12 @@ const ProductDetails = () => {
 
   // Render the component with the productData
   return (
-    <div>
+    <>
+      <div className= 'w-[1220px] mx-auto'>
       <Header />
       <div className='container mx-auto mt-5 flex gap-16 bg-slate-400 h-[80vh] items-center rounded-lg'>
       <div className='ml-10 '>
-        <img className=' rounded-[50px] h-[750px]' src={productData.image} alt=''/>
+        <img className=' rounded-[50px] w-[450px] h-[550px]' src={productData.image} alt=''/>
       </div>
         <div className='flex flex-col gap-3 items-start mt-5'>
           <p className='text-2xl text-[#FFF]'>{productData.category}</p>
@@ -53,8 +54,9 @@ const ProductDetails = () => {
             <ProductCard data={item}/> )
           }
       </div>
-    <Footer/>
     </div>
+    <Footer/>
+    </>
     
   );
 };

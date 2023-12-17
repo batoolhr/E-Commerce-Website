@@ -8,12 +8,17 @@ import Footer from './Footer'
 const Home = () => {
 
   return (
-    <>
+   <>
+   
+   <div className='w-[1200px] mx-auto'>
         <Header/>
         <HeroSection/>
         <Products />
-        <Footer/>
-    </>
+        
+    </div>
+    <Footer/>
+   </>
+    
   )
 }
 

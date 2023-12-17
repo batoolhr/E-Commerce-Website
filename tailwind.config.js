@@ -17,7 +17,10 @@ module.exports = {
       },
       minHeight: {
         "screen-85":"88.8vh"
-      }
+      },
+      container: {
+        maxWidth: '800px !important',
+      },
 
     },
   },

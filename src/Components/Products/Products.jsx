@@ -47,7 +47,7 @@ const Products = () => {
 
 
     return (
-        <div className="container mx-auto">
+        <div className="w-[1220px] mx-auto">
           <Categories   HandleSelectCategory={HandleSelectCategory}/>
             <div className="grid grid-cols-4 gap-5 my-10">
             {loading && <div className="flex items-center w-16 h-16 border-8 border-dashed rounded-full animate-spin border-blue-600"></div>}
