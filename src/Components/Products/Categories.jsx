@@ -24,7 +24,7 @@ import { getCategories } from '../../Store/CategoriesSlice';
         {Category.map((item, index) => (
           <div  onClick={()=>HandleSelectCategory(item)} className="flex  hover:cursor-pointer" key={index} >
             <span 
-              className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-bt-color bg-[#E5E4E2] hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+              className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-bt-color bg-[#E5E4E2] hover:bg-indigo-200 md:py-4  md:px-10"
             >
               {item}
             </span>
