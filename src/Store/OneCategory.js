@@ -1,11 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import axios from "axios"
 
-export const getSpecificCategory=createAsyncThunk('store/getSpecificCategory',async (Cat)=>{
+
+
+
+const API_URL="http://localhost:3000"
+export const getSpecificCategory=createAsyncThunk('store/getSpecificCategory',async (categoryName)=>{
     try {
-        const response=await fetch(`https://fakestoreapi.com/products/category/${Cat}`)
-        const cat=response.json()
-        console.log("cat",cat)
-        return cat
+        console.log("Cat",categoryName)
+        const response=await axios.get(`${API_URL}/products/single/${categoryName}`)
+
+        console.log("response",response)
+        return response.data
     } catch (error) {
         console.error("Error fetching Categories:", error);
         throw error;

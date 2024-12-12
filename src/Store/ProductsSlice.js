@@ -1,4 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 
 const initialState={
@@ -8,27 +9,23 @@ const initialState={
     limitData:[]
 }
 
-// export const getProducts=createAsyncThunk('store/getProducts',()=>{
-//     return fetch('https://fakestoreapi.com/products')
-//             .then(res=>res.json())
-//             .then(json=>console.log(json))
 
-//     })
+const API_URL="http://localhost:3000"
+
 export const getProducts = createAsyncThunk('store/getProducts', async () => {
     try {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        return data;
+        const response = await axios.get(`${API_URL}/products/list`);
+        return response.data;
     } catch (error) {
         console.error("Error fetching products:", error);
         throw error;
     }
 });
+
 export const getLimitProducts = createAsyncThunk('store/getLimitProducts', async () => {
     try {
-      const response = await fetch('https://fakestoreapi.com/products?limit=4');
-      const data = await response.json();
-      return data;
+    const response=await axios.get(`${API_URL}/products/limit`)
+      return response.data
     } catch (error) {
       console.error("Error fetching products:", error);
       throw error;
@@ -45,7 +42,6 @@ const ProductSlice=createSlice({
         builder.addCase(getProducts.fulfilled,(state,action)=>{
             state.loading=false;
             state.data=action.payload
-            console.log(state.data)
             state.error=''
         })
         builder.addCase(getProducts.rejected,(state,action)=>{
@@ -55,8 +51,6 @@ const ProductSlice=createSlice({
         })
         builder.addCase(getLimitProducts.fulfilled,(state,action)=>{
             state.limitData=action.payload
-            console.log("SSS",action.payload)
-            console.log("DATATTT",state.limitData)
         })
     }
 })
