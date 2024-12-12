@@ -41,9 +41,7 @@ const CartShoppingSlice = createSlice({
     DeleteItem:(state,action)=>{
       const items=state.cartList.filter((item)=>
       item.id !== action.payload.id)
-      console.log("itmes",items)
       state.cartList=items
-      console.log("state.cartList",state.cartList)
       
     }
   },
