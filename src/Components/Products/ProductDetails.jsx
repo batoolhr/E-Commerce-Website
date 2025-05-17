@@ -12,6 +12,8 @@ const ProductDetails = () => {
   const productData = location.state && location.state.productData;
   const Data = useSelector((state) => state.products.limitData);
   const dispatch = useDispatch();
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+
   useEffect(() => {
     dispatch(getLimitProducts());
   }, [dispatch]);
@@ -24,9 +26,8 @@ const ProductDetails = () => {
   // Render the component with the productData
   return (
     <>
-      {console.log("productData", productData)}
       <div className="w-[1220px] mx-auto">
-        <Header />
+        <Header isAuthenticated={isAuthenticated} />
         <div className="container mx-auto mt-5 flex gap-16 bg-slate-400 h-[80vh] items-center rounded-lg">
           <div className="ml-10 ">
             <img
@@ -62,7 +63,7 @@ const ProductDetails = () => {
         </h2>
         <div className="grid grid-cols-4 gap-3 container mx-auto my-5">
           {Data.map((item) => (
-            <ProductCard data={item} />
+            <ProductCard key={item.id} data={item} />
           ))}
         </div>
       </div>

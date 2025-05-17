@@ -4,7 +4,7 @@ import Products from "../Products/Products";
 import HeroSection from "./HeroSection";
 import Footer from "./Footer";
 
-const Home = ({ onLogout, isAuthenticated }) => {
+const PublicHome = ({ onLogout, isAuthenticated }) => {
   return (
     <>
       <div className="w-[1200px] mx-auto">
@@ -17,4 +17,4 @@ const Home = ({ onLogout, isAuthenticated }) => {
   );
 };
 
-export default Home;
+export default PublicHome;
